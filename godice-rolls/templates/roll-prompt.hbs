@@ -2,24 +2,28 @@
 	<table>
 		<thead>
 			<th>{{localize "GODICE_ROLLS.Prompt.Header_RollTerm"}}<a class="button" title="{{localize "GODICE_ROLLS.Tooltip.RollTerm"}}">
-					<i class="fas fa-question-circle"></i></a></th>
+					<i class="fas fa-question-circle"></i></a>
+			</th>
 			<th>{{localize "GODICE_ROLLS.Prompt.Header_Rolls"}}<a class="button" title="{{localize "GODICE_ROLLS.Tooltip.Rolls"}}">
-					<i class="fas fa-question-circle"></i></a></th>
-			<th>&nbsp;&nbsp;&nbsp;{{localize "GODICE_ROLLS.Prompt.Header_Total"}}
-				<a class="button" title="{{localize "GODICE_ROLLS.Tooltip.Total"}}">
-					<i class="fas fa-question-circle"></i>
-				</a>&nbsp;&nbsp;&nbsp;
+					<i class="fas fa-question-circle"></i></a>
 			</th>
 		</thead>
 		<tbody>
 			{{#each terms}}
 			<tr>
 				<td>{{faces}}</td>
-				<td><input name="{{id}}-{{idx}}" type="number" min="1" max="{{term.faces}}" tabindex="1{{id}}{{idx}}" step="1"></input></td>
-				<script>
-					input = document.getElementByName("{{id}}-{{idx}}");
-					input.value = {{term.faces}};
-				</script>
+				<td><input name="{{id}}-{{idx}}" type="number" min="1" max="{{term.faces}}" tabindex="1{{id}}{{idx}}" step="1"/>
+					<script>
+						console.log("{{id}}-{{idx}}");
+						console.log("{{term.faces}}");
+						input = document.getElementsByName("{{id}}-{{idx}}");
+						console.log(input);
+						roll = parseInt("{{term.faces}}",10);
+						console.log(roll);
+						input[0].value = roll;
+						console.log(input);
+					</script>
+				</td>
 			</tr>
 			{{/each}}
 		</tbody>

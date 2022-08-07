@@ -1,5 +1,5 @@
 import SETTINGS from "../../common/Settings";
-import ManualRolls from "./ManualRolls";
+import goDiceRolls from "./goDiceRolls";
 
 export default class RollSettings {
 	static init() {
@@ -8,10 +8,10 @@ export default class RollSettings {
 			html.find('li.player').each((_idx, element) => {
 				const userId = element.getAttribute('data-user-id');
 				const user = game.users.get(userId);
-				const rollType = user.getFlag(SETTINGS.MOD_NAME, ManualRolls.FLAG_ROLL_TYPE);
+				const rollType = user.getFlag(SETTINGS.MOD_NAME, goDiceRolls.FLAG_ROLL_TYPE);
 				if (!rollType) return;
 				let html = '';
-				switch (user.getFlag(SETTINGS.MOD_NAME, ManualRolls.FLAG_ROLL_TYPE) ?? SETTINGS.get(ManualRolls.PREF_PC_STATE)) {
+				switch (user.getFlag(SETTINGS.MOD_NAME, goDiceRolls.FLAG_ROLL_TYPE) ?? SETTINGS.get(goDiceRolls.PREF_PC_STATE)) {
 					case 'disabled': html = `<i class="fas fa-dice" title="${'DF_MANUAL_ROLLS.Setting_Options.Disabled'.localize()}"></i>`; break;
 					case 'always': html = `<i class="fas fa-keyboard" title="${'DF_MANUAL_ROLLS.Setting_Options.Always'.localize()}"></i>`; break;
 					case 'toggle': html = `<i class="fas fa-toggle-on" title="${'DF_MANUAL_ROLLS.Setting_Options.Toggle'.localize()}"></i>`; break;
@@ -21,7 +21,7 @@ export default class RollSettings {
 		});
 		Hooks.on('renderUserConfig', (app: UserConfig, html: JQuery<HTMLElement>) => {
 			if (!game.user.isGM) return;
-			const rollType = app.object.getFlag(SETTINGS.MOD_NAME, ManualRolls.FLAG_ROLL_TYPE);
+			const rollType = app.object.getFlag(SETTINGS.MOD_NAME, goDiceRolls.FLAG_ROLL_TYPE);
 			const rollConfig = $(`<div class="form-group">
 	<label>${'Manual Roll Override'.localize()}</label>
 	<select name="flags.df-manual-rolls.roll-type">

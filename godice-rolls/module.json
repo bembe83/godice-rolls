@@ -14,8 +14,8 @@
 		{ "lang": "pl", "name": "Polski", "path": "lang/pl.json" }
 	],
 	"url":		"https://github.com/bembe83/godice-rolls/",
-	"manifest":	"https://github.com/bembe83/godice-rolls/releases/download/v1.0.0/module.json",
-	"download":	"https://github.com/bembe83/godice-rolls/releases/download/v1.0.0/GoDiceModule_1.0.0.zip",
+	"manifest":	"https://github.com/bembe83/godice-rolls/releases/download/V1.0.0/module.json",
+	"download":	"https://github.com/bembe83/godice-rolls/releases/download/V1.0.0/GoDiceModule_1.0.0.zip",
 	"manifestPlusVersion": "1.0.0",
-	"authors": [ { "name": "bembe83", "url": "https://github.com/bembe83" } ],
+	"authors": [ { "name": "bembe83", "url": "https://github.com/bembe83" } ]
 }
