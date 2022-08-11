@@ -1,0 +1,103 @@
+html,
+body 
+{ 
+	width: 100%;	
+}
+
+.banner
+{	
+	margin: 0 auto;
+	padding-top: 1%;
+	padding-bottom: 2%;
+	background-position: center;
+	background-size: cover;
+
+}
+
+.banner img {
+	display: block;
+	margin: auto;
+}
+
+.diceManager, .player, .buttons, [id$='-group'], [id$='-roll']
+{
+	width: 70%;
+	margin: auto;
+	border-style: solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: flex;
+	align-items: center;
+}
+
+.dice-wrapper
+{
+	margin: auto;
+	border-style: solid;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display:  flex;
+}
+
+.dice-wrapper div input img;
+{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.player, .buttons{
+	text-align: center;
+}
+
+.player input
+{
+	width: 50%;
+}
+
+.buttons button
+{
+	margin: auto;
+	text-align: center;
+	width: 150px;
+}
+
+.btn
+{
+	display:  inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+[id$='operator']
+{
+	width: 50px;
+}
+
+[id$='-battery-indicator']
+{
+	width:  40px;
+	text-align: center;
+	vertical-align: center;
+}
+
+[id$='-die-status']
+{
+	border-style: solid;
+	width: 100px;
+}
+
+.battery_low
+{
+	background-color: red;
+}
+
+.battery_medium
+{
+	background-color: red;
+}
+
+.battery_high
+{
+	background-color: red;
+}
+
